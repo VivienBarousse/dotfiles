@@ -86,6 +86,9 @@ if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
     alias rgrep='rgrep --color=auto'
 fi
 
+# Set default ssh-add timespan to 4 hours
+alias ssh-add='ssh-add -t 14400'
+
 # Vim is way better than vi
 export EDITOR=vim
 
