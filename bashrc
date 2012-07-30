@@ -28,6 +28,15 @@ case "$TERM" in
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
+# enable programmable completion features
+# Try different location for that file, depending on Linux distros
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion # Debian-based
+fi
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion # Archlinux
+fi
+
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
@@ -43,12 +52,17 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]${VIM:+ (vimception)}\[\033[00m\]$(__git_ps1)\$ '
+if [ -n "`command -v __git_ps1`" ]; then 
+  git_ps1="\$(__git_ps1)"
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w${VIM:+ (vimception)}$(__git_ps1)\$ '
+  git_ps1=""
 fi
-unset color_prompt force_color_prompt
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]${VIM:+ (vimception)}\[\033[00m\]'$git_ps1'\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w${VIM:+ (vimception)}'$git_ps1'\$ '
+fi
+unset color_prompt force_color_prompt git_ps1
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -60,39 +74,23 @@ xterm*|rxvt*)
 esac
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias rgrep='rgrep --color=auto'
 fi
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
+# Vim is way better than vi
+export EDITOR=vim
 
 # Songkick's project location 
+# Probably doesn't belong here anyway...
 export PROJECT_INDEX=/home/vivien/projects/project_index.yml
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
