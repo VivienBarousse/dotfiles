@@ -89,6 +89,8 @@ fi
 # Set default ssh-add timespan to 4 hours
 alias ssh-add='ssh-add -t 14400'
 
+alias be='bundle exec'
+
 # Vim is way better than vi
 export EDITOR=vim
 
