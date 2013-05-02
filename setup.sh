@@ -1,11 +1,13 @@
-files="bashrc bash_login bash_logout vimrc"
+files="bashrc bash_login bash_logout vimrc vim"
 source_dir=`pwd`
 
 for file in $files; do
-  if [ -f "$source_dir/$file" ]; then
+  if [ -e "$source_dir/$file" ]; then
     if [ -e "$HOME/.$file" ]; then
       mv "$HOME/.$file" "$HOME/.$file.bck"
+      echo "Moving $HOME/.$file to $HOME/.$file.bck"
     fi
     ln -s "$source_dir/$file" "$HOME/.$file"
+    echo "Linking $source_dir/$file to $HOME/.$file"
   fi
 done
