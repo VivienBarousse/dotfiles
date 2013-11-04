@@ -86,8 +86,8 @@ if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
     alias rgrep='rgrep --color=auto'
 fi
 
-# Set default ssh-add timespan to 4 hours
-alias ssh-add='ssh-add -t 14400'
+# Set default ssh-add timespan to 8 hours
+alias ssh-add='ssh-add -t 28800'
 
 alias be='bundle exec'
 
