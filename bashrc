@@ -91,6 +91,8 @@ alias ssh-add='ssh-add -t 28800'
 
 alias be='bundle exec'
 
+alias vim='vim -p'
+
 # Vim is way better than vi
 export EDITOR=vim
 
