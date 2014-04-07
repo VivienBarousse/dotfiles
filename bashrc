@@ -27,7 +27,6 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
 # enable programmable completion features
 # Try different location for that file, depending on Linux distros
 if [ -f /etc/bash_completion ]; then
@@ -37,6 +36,7 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
   . /usr/share/bash-completion/bash_completion # Archlinux
 fi
 
+# uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes

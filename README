@@ -1,2 +1,15 @@
 This is a collection of my dotfiles, nothing interesting to read in there
 I'm afraid.
+
+The rest of this README is mostly for me to remember how to set up those
+dotfiles on new machines.
+
+Installation
+============
+
+Initialise and download submodules (mainly for VIM plugins):
+$ git submodule init
+$ git submodule update
+
+Symlink the files in place:
+$ ./setup.sh
