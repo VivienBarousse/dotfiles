@@ -25,10 +25,16 @@ func! MyCtrlP()
   CtrlP
 endfunc
 
+func! ABSCLA19071348()
+  silent :%s/$/ Tom/g
+endfunc
+
 com! MyCtrlP call MyCtrlP()
+com! ABSCLA19071348 call ABSCLA19071348()
 
 filetype on
 au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead Capfile set filetype=ruby
+au BufNewFile,BufRead Gemfile set filetype=ruby
 
 autocmd VimEnter * nmap <c-p> :MyCtrlP<cr>
