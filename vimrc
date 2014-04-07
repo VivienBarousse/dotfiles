@@ -29,5 +29,6 @@ com! MyCtrlP call MyCtrlP()
 
 filetype on
 au BufNewFile,BufRead *.go set filetype=go
+au BufNewFile,BufRead Capfile set filetype=ruby
 
 autocmd VimEnter * nmap <c-p> :MyCtrlP<cr>
