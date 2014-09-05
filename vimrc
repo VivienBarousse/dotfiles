@@ -34,6 +34,7 @@ com! ABSCLA19071348 call ABSCLA19071348()
 
 filetype on
 au BufNewFile,BufRead *.go set filetype=go
+au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead Capfile set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 
