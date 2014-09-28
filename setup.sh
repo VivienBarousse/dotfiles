@@ -1,4 +1,4 @@
-files="bashrc bash_login bash_logout vimrc vim"
+files="bashrc bash_login bash_logout gitconfig vimrc vim"
 source_dir=`pwd`
 
 for file in $files; do
