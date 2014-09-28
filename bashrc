@@ -96,8 +96,4 @@ alias vim='vim -p'
 # Vim is way better than vi
 export EDITOR=vim
 
-# Songkick's project location 
-# Probably doesn't belong here anyway...
-export PROJECT_INDEX=/home/vivien/projects/project_index.yml
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
