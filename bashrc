@@ -57,8 +57,37 @@ if [ -n "`command -v __git_ps1`" ]; then
 else
   git_ps1=""
 fi
+
+__ps1() {
+  exit_code=$?
+
+  if [ -n "$debian_chroot" ]; then
+    echo -en "$debian_chroot"
+  fi
+
+  echo -en "\033[01;32m$(whoami)@$(hostname)\033[00m:"
+  echo -en "\033[01;34m$(pwd | sed "s,^$HOME,~,")\033[00m"
+
+  if [ -n "$VIM" ]; then
+    echo -en " \033[01;31m(vimception)\033[00m"
+  fi
+
+  if [ -n "`command -v __git_ps1`" ]; then
+    __git_ps1
+  fi
+
+  echo -en "\n"
+
+  if [ $exit_code -eq 0 ]; then
+    echo -en "$"
+  else
+    echo -en "\033[01;31m\$\033[00m"
+  fi
+  echo -en " "
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]${VIM:+ (vimception)}\[\033[00m\]'$git_ps1'\n\$ '
+    PS1='$(__ps1)'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w${VIM:+ (vimception)}'$git_ps1'\n\$ '
 fi
