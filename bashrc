@@ -126,3 +126,7 @@ alias vim='vim -p'
 export EDITOR=vim
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+man() {
+  /usr/bin/man $1 2> >(sed 's/No manual entry for /You’re a /')
+}
