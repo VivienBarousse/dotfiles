@@ -65,23 +65,23 @@ __ps1() {
     echo -en "$debian_chroot"
   fi
 
-  echo -en "\033[01;32m$(whoami)@$(hostname)\033[00m:"
-  echo -en "\033[01;34m$(pwd | sed "s,^$HOME,~,")\033[00m"
+  echo -en "\e[1;32m$(whoami)@$(hostname)\e[0m:"
+  echo -en "\e[1;34m$(pwd | sed "s,^$HOME,~,")\e[0m"
 
   if [ -n "$VIM" ]; then
-    echo -en " \033[01;31m(vimception)\033[00m"
+    echo -en " \e[1;31m(vimception)\e[0m"
   fi
 
   if [ -n "`command -v __git_ps1`" ]; then
     __git_ps1
   fi
 
-  echo -en "\n"
+  echo ""
 
   if [ $exit_code -eq 0 ]; then
     echo -en "$"
   else
-    echo -en "\033[01;31m\$\033[00m"
+    echo -en "\e[1;31m$\e[0m"
   fi
   echo -en " "
 }
