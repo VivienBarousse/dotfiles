@@ -81,7 +81,7 @@ __ps1() {
   if [ $exit_code -eq 0 ]; then
     echo -en "$"
   else
-    echo -en "\e[1;31m$\e[0m"
+    echo -en "\001\e[01;31m\002\$\001\e[00m\002"
   fi
   echo -en " "
 }
