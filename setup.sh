@@ -1,6 +1,9 @@
 files="bashrc bash_login bash_logout gitconfig vimrc vim"
 source_dir=`pwd`
 
+git submodule init
+git submodule update
+
 for file in $files; do
   if [ -e "$source_dir/$file" ]; then
     if [ -e "$HOME/.$file" ]; then
@@ -11,3 +14,4 @@ for file in $files; do
     echo "Linking $source_dir/$file to $HOME/.$file"
   fi
 done
+
