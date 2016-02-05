@@ -7,9 +7,9 @@ dotfiles on new machines.
 Installation
 ============
 
-Initialise and download submodules (mainly for VIM plugins):
-$ git submodule init
-$ git submodule update
+Download the repo:
+$ git clone git@github.com:VivienBarousse/dotfiles.git
 
-Symlink the files in place:
+Download submodules and symlink the files in place:
 $ ./setup.sh
+
