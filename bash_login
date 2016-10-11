@@ -1,5 +1,7 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+[[ -s "$HOME/.rbenv/bin/rbenv" ]] && export PATH="$HOME/.rbenv/bin:$PATH" # Add rbenv to the path
+
 if [ -f ~/.ssh/ssh_agent ]; then
   source ~/.ssh/ssh_agent
 fi
