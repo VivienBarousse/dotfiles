@@ -15,3 +15,6 @@ for file in $files; do
   fi
 done
 
+ln -s "$source_dir/rbenv-ruby-build" "$source_dir/rbenv/plugins/ruby-build"
+echo "Linking $source_dir/rbenv-ruby-build to $source_dir/rbenv/plugins/ruby-build"
+
