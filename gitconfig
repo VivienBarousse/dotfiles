@@ -3,3 +3,5 @@
 	email = barousse.vivien@gmail.com
 [color]
 	ui = true
+[core]
+	excludesfile = /home/vagrant/.gitignore
