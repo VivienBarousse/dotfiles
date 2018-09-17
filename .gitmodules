@@ -7,3 +7,9 @@
 [submodule "rbenv-ruby-build"]
 	path = rbenv-ruby-build
 	url = https://github.com/rbenv/ruby-build.git
+[submodule "nodenv"]
+	path = nodenv
+	url = https://github.com/nodenv/nodenv.git
+[submodule "nodenv-node-build"]
+	path = nodenv-node-build
+	url = https://github.com/nodenv/node-build.git
