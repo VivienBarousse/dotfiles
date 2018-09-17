@@ -1,4 +1,4 @@
-files="bashrc bash_profile bash_login bash_logout gitconfig vimrc vim rbenv"
+files="bashrc bash_profile bash_login bash_logout gitconfig vimrc vim rbenv nodenv"
 source_dir=`pwd`
 
 git submodule init
@@ -17,5 +17,9 @@ done
 
 mkdir -p "$source_dir/rbenv/plugins/"
 ln -s "$source_dir/rbenv-ruby-build" "$source_dir/rbenv/plugins/ruby-build"
+
+mkdir -p "$source_dir/nodenv/plugins/"
+ln -s "$source_dir/nodenv-node-build" "$source_dir/nodenv/plugins/node-build"
+
 echo "Linking $source_dir/rbenv-ruby-build to $source_dir/rbenv/plugins/ruby-build"
 

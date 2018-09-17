@@ -2,6 +2,8 @@
 
 [[ -s "$HOME/.rbenv/bin/rbenv" ]] && export PATH="$HOME/.rbenv/bin:$PATH" # Add rbenv to the path
 
+[[ -s "$HOME/.nodenv/bin/nodenv" ]] && export PATH="$HOME/.nodenv/bin:$PATH" # Add nodenv to the path
+
 if [ -f ~/.ssh/ssh_agent ]; then
   source ~/.ssh/ssh_agent
 fi
