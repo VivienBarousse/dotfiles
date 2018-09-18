@@ -125,8 +125,6 @@ alias vim='vim -p'
 # Vim is way better than vi
 export EDITOR=vim
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 man() {
   /usr/bin/man $1 2> >(sed 's/No manual entry for /You’re a /')
 }
