@@ -4,6 +4,8 @@
 
 [[ -s "$HOME/.nodenv/bin/nodenv" ]] && export PATH="$HOME/.nodenv/bin:$PATH" # Add nodenv to the path
 
+[[ -s "$HOME/.pyenv/bin/pyenv" ]] && export PATH="$HOME/.pyenv/bin:$PATH" # Add pyenv to the path
+
 if [ -f ~/.ssh/ssh_agent ]; then
   source ~/.ssh/ssh_agent
 fi

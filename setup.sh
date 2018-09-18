@@ -1,4 +1,4 @@
-files="bashrc bash_profile bash_login bash_logout gitconfig vimrc vim rbenv nodenv"
+files="bashrc bash_profile bash_login bash_logout gitconfig vimrc vim rbenv nodenv pyenv"
 source_dir=`pwd`
 
 git submodule init

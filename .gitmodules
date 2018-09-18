@@ -13,3 +13,6 @@
 [submodule "nodenv-node-build"]
 	path = nodenv-node-build
 	url = https://github.com/nodenv/node-build.git
+[submodule "pyenv"]
+	path = pyenv
+	url = https://github.com/pyenv/pyenv.git
