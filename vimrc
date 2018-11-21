@@ -32,6 +32,8 @@ endfunc
 com! MyCtrlP call MyCtrlP()
 com! ABSCLA19071348 call ABSCLA19071348()
 
+let g:ctrlp_custom_ignore = 'node_modules'
+
 filetype on
 au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead *.json set filetype=javascript
