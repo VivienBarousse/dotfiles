@@ -35,10 +35,15 @@ com! ABSCLA19071348 call ABSCLA19071348()
 let g:ctrlp_custom_ignore = 'node_modules'
 
 filetype on
+
 au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.str set filetype=ruby
 au BufNewFile,BufRead Capfile set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType make setlocal noexpandtab shiftwidth=0 softtabstop=0
+
 autocmd VimEnter * nmap <c-p> :MyCtrlP<cr>
+
